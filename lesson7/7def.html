@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7def</title>
+</head>
+<body>
+    <h2>temparature conversions in console</h2>
+    <script>
+
+      function convertToCelsius(farenheit) {
+        console.log((farenheit - 32) * (5 / 9));
+        return (farenheit - 32) * (5 / 9);
+      }
+
+      function convertToFarenheit(celsius) {
+        console.log(celsius * (9 / 5) + 32);
+        return celsius * (9 / 5) + 32;
+      }
+
+      function convertTemparature(degrees, unit) {
+        if (unit == "C") {
+          const temp = convertToFarenheit(degrees);
+          console.log(`${temp}F`);
+        } else {
+          const temp = convertToCelsius(degrees);
+          console.log(`${temp}C`);
+        }
+      }
+
+      convertToCelsius(86);
+      convertToFarenheit(25);
+      convertTemparature(25, "C");
+      convertTemparature(86, "F");
+
+    </script>
+</body>
+</html>
