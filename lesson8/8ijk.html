@@ -9,10 +9,20 @@
     <button onclick="playGame('Heads')">Heads</button>
     <button onclick="playGame('Tails')">Tails</button>
     <script>
+        const score = {
+            wins : 0,
+            losses : 0
+        };
+
         function playGame(guess) {
             let number = Math.random();
             let result = (number < 0.5) ? 'Heads' : 'Tails';
+            if(result == guess)
+                score.wins += 1;
+            else
+                score.losses += 1;
             console.log((result == guess) ? 'You Win!' : 'You Lose!');
+            console.log(score);
         }
     </script>
 </body>
