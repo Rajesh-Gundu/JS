@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <p>
+        <button onclick="addToExpr('1')">1</button>
+
+        <button onclick="addToExpr('2')">2</button>
+
+        <button onclick="addToExpr('3')">3</button>
+
+        <button onclick="addToExpr('4')">4</button>
+
+    </p>
+
+    <p>
+
+        <button onclick="addToExpr('5')">5</button>
+
+        <button onclick="addToExpr('6')">6</button>
+
+        <button onclick="addToExpr('7')">7</button>
+
+        <button onclick="addToExpr('8')">8</button>
+
+    </p>
+
+    <p>
+
+        <button onclick="addToExpr('9')">9</button>
+
+        <button onclick="addToExpr('0')">0</button>
+
+        <button onclick="addToExpr(' + ')">+</button>
+
+        <button onclick="addToExpr(' - ')">-</button>
+
+    </p>
+
+    <p>
+
+        <button onclick="addToExpr(' * ')">*</button>
+
+        <button onclick="addToExpr(' / ')">/</button>
+
+        <button onclick="calc()">=</button>
+
+        <button onclick="clearExpr()">CLR</button>
+
+    </p>
+
+    <script>
+        let calculation = localStorage.getItem('calculation') || "";
+
+        function addToExpr(s) {
+            calculation += s;
+            console.log(calculation);
+            localStorage.setItem('calculation',calculation);
+        }
+
+        function clearExpr() {
+            calculation = '';
+            console.log(calculation);
+            localStorage.removeItem('calculation');
+        }
+
+        function calc() {
+            calculation = eval(calculation);
+            console.log(calculation);
+            localStorage.setItem('calculation',calculation);
+        }
+    </script>
+</body>
+</html>
