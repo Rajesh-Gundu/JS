@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9def</title>
+</head>
+<body>
+    <input placeholder="Enter name" class="input">
+    <button onclick="display()">Submit</button>
+    <p></p>
+
+    <script>
+        function display() {
+            let name = document.querySelector('.input').value;
+            document.querySelector('p').innerHTML = `Your name is : ${name}`;
+        }
+    </script>
+</body>
+</html>
