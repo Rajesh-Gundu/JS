@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9h</title>
+</head>
+<body>
+    <input placeholder="Enter text" onkeyup="updateText()">
+    <p></p>
+
+    <script>
+        const s = document.querySelector('input');
+        const p = document.querySelector('p');
+
+        function updateText() {
+            p.innerHTML = s.value;    
+        }
+    </script>
+</body>
+</html>
