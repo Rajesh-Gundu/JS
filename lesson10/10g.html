@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-button gaming" onclick="toggle('.gaming')">Gaming</button>
+    <button class="toggle-button music" onclick="toggle('.music')">Music</button>
+    <button class="toggle-button tech" onclick="toggle('.tech')">Tech</button>
+
+    <script>
+        function removePreviousToggle() {
+            const button = document.querySelector('.is-toggled');
+            if(button)
+                button.classList.remove('is-toggled');
+        }
+
+        function toggle(sel) {
+            const button = document.querySelector(sel);
+            if (!button.classList.contains('is-toggled')) {
+                removePreviousToggle();
+                button.classList.add('is-toggled');
+            } else {
+                button.classList.remove('is-toggled');
+            }
+        }
+
+    </script>
+  </body>
+</html>
