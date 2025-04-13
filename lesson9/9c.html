@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9c</title>
+</head>
+<body>
+    <button class="heads" onclick="showChoice('Heads')">Heads</button>
+    <button class="tails" onclick="showChoice('Tails')">Tails</button>
+    <p></p>
+
+    <script>
+        function showChoice(choice) {
+            document.querySelector('p')
+                .innerHTML = `Your Choice : ${choice}`;
+        }
+    </script>
+</body>
+</html>
