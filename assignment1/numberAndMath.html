@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-1</title>
+</head>
+<body>
+    <p>Question-1</p>
+    <p>Number and Math</p>
+    <script>
+
+        function formatCurrency(num,code){
+            let val = String(num);
+            let ans = "";
+            let idx = val.indexOf(".");
+            let len = val.length;
+            if(idx == -1)
+                idx = len;
+            ans = val.slice(idx,len);
+            let cnt = 0;
+            if(code == "USD" || code == "EUR"){
+                for(let i=idx-1;i>=0;i--){
+                    if(cnt == 3){
+                        ans = val[i] + "," + ans;
+                        cnt = 0;
+                    }
+                    else
+                    ans = val[i] + ans;
+                    cnt++;
+                }
+                return ans;
+            }
+            let isthree = false;
+            for(let i=idx-1;i>=0;i--){
+                if(!isthree && cnt == 3){
+                    ans = val[i] + "," + ans;
+                    isthree = true;
+                    cnt = 0;
+                }
+                else if(isthree && cnt == 2) {
+                    ans = val[i] + "," + ans;
+                    cnt = 0;
+                }
+                else
+                    ans = val[i] + ans;
+                cnt++;
+            }
+            return ans;
+        }
+
+        console.log(formatCurrency(210748567893,"USD"));
+        console.log(formatCurrency(210748567893,"EUR"));
+        console.log(formatCurrency(210748567893.98,"IND"));
+    </script>
+</body>
+</html>
