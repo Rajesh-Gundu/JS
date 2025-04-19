@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-5</title>
+</head>
+<body>
+    <p>Question-5</p>
+    <script>
+        const obj = {
+            age : 18,
+            hasLicense : true,
+            temperature : 25,
+            humidity : 50,
+            role : "admin",
+            isActive : false
+        };
+        function evaluateConditions(obj){
+            if(obj.age >= 18 && obj.hasLicense)
+                return "Eligible to drive";
+            else if(obj.temperature > 30 || obj.humidity > 70)
+                return "Warning: High discomfort level";
+            else if((obj.role == "admin" || obj.role == "editor") && obj.isActive)
+                return "Access granted";
+        }
+        console.log(evaluateConditions(obj));
+        obj.age = 16;
+        obj.humidity = 60;
+        obj.isActive = true;
+        console.log(evaluateConditions(obj));
+        obj.role = "editor";
+        console.log(evaluateConditions(obj));
+        obj.age = 16;
+        obj.temperature = 32;
+        console.log(evaluateConditions(obj));
+        obj.temperature = 28;
+        obj.humidity = 72;
+        console.log(evaluateConditions(obj));
+    </script>
+</body>
+</html>
