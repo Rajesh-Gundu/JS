@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #add {
+           color: white;
+           background-color: green;
+           border: none;
+           font-weight: bold;
+           border-radius: 3px;
+           padding: 10px 15px;
+           cursor: pointer;
+        }
+        #dec {
+           color: white;
+           background-color: red;
+           border: none;
+           font-weight: bold;
+           border-radius: 3px;
+           padding: 10px 15px;
+           cursor: pointer;
+        }
+        #add:active {
+            background-color: rgb(17, 207, 17);
+        }
+        #dec:active {
+            background-color: rgb(243, 99, 99);
+        }
+        #p1 {
+            font-size: xx-large;
+            color: rgb(3, 111, 111);
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">Count = 0</p>
+    <button onclick="Inc()" id="add">Increment</button>
+    <button onclick="Dec()" id="dec">Decrement</button>
+    <script>
+        let cnt = 0;
+        const para = document.getElementById("p1");
+        function Inc(){
+            cnt++;
+            para.innerText =  `Count = ${cnt}`;
+        }
+        function Dec(){
+            if(cnt > 0)
+                cnt--;
+            para.innerText = `Count = ${cnt}`;
+        }
+    </script>
+</body>
+</html>
