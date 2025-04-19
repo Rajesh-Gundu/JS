@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Scoping</title>
+</head>
+<body>
+    <p>Variable Scoping</p>
+    <script>
+        let num = 50;
+        function display(){
+            let x = 30;
+            if(x < 50){
+                let x = 51;
+                console.log(`Block scope = ${x}`);
+            }
+            console.log(`Local (accesing elelemt of function within a function) = ${x}`);
+            console.log(`Local (accessing global element inside a function) = ${num}.`);
+        }
+        display();
+        console.log(`Global = ${num}.`);
+        console.log(`Local(accesing element of a function outside the function) = ${x}`);  // error
+    </script>
+</body>
+</html>
