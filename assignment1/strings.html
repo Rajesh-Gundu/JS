@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-2</title>
+</head>
+<body>
+    <p>Question-2</p>
+    <script>
+        function getMaxLengthPalindrome(p1,p2,str) {
+            let n = str.length;
+            while(p1>=0 && p2<n && str[p1]==str[p2]){
+                p1--;
+                p2++;
+            }
+            return str.slice(p1+1,p2);
+        }
+        function findLongestPalindrome(str){
+            let n = str.length;
+            if(n == 1)
+                return str;
+            let res = "";
+            for(let i=0;i<n;i++){
+                oddLength = getMaxLengthPalindrome(i,i,str);
+                if(oddLength.length > res.length)
+                    res = oddLength;
+                evenLength = getMaxLengthPalindrome(i,i+1,str);
+                if(evenLength.length > res.length)
+                    res = evenLength;
+            }
+            return res;
+        }
+        console.log(findLongestPalindrome("madam"));
+        console.log(findLongestPalindrome("123321"));
+        console.log(findLongestPalindrome("mameam"));
+        console.log(findLongestPalindrome("abcdcdd"));
+        console.log(findLongestPalindrome("aabbade"));
+        console.log(findLongestPalindrome("kleffelg"));
+        console.log(findLongestPalindrome("racecarmadam"));
+    </script>
+</body>
+</html>
