@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Question-6</p>
+    <script>
+        function createCalculator(){
+            const obj = {
+                add(a,b){
+                    return a+b;
+                },
+                subtract(a,b){
+                    return a-b;
+                },
+                multiply(a,b){
+                    return a*b;
+                },
+                divide(a,b){
+                    return a/b;
+                }
+            };
+            return obj;
+        }
+        const calc = createCalculator();
+        console.log(calc.add(5,6));
+        console.log(calc.subtract(10,4));
+        console.log(calc.multiply(4,3));
+        console.log(calc.divide(85,2));
+    </script>
+</body>
+</html>
