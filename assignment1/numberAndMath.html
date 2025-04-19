@@ -26,9 +26,13 @@
                         cnt = 0;
                     }
                     else
-                    ans = val[i] + ans;
+                        ans = val[i] + ans;
                     cnt++;
                 }
+                if(code == "USD")
+                    ans = "$" + ans;
+                else
+                    ans = "€" + ans;
                 return ans;
             }
             let isthree = false;
@@ -46,6 +50,7 @@
                     ans = val[i] + ans;
                 cnt++;
             }
+            ans = "₹" + ans;
             return ans;
         }
 
