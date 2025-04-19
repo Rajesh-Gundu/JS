@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        class book {
+            constructor(title,author,ISBN) {
+                this.title = title;
+                this.author = author;
+                this.ISBN = ISBN;
+                this.isBorrow = false;
+            }
+
+            borrow() {
+                if(this.isBorrow) {
+                    console.log(`'${this.title}' was already borrowed..`);
+                }
+                else {
+                    this.isBorrow = true;
+                    console.log(`'${this.title}' was borrowed now..`);
+                }
+            }
+
+            returnBook() {
+                if(this.isBorrow) {
+                    this.isBorrow = false;
+                    console.log(`'${this.title}' returned successfully..`);
+                }
+                else {
+                    console.log(`'${this.title}' is not borrowed..`);
+                }
+            }
+        }
+
+        class library {
+            constructor(name) {
+                this.title = name;
+                this.books = [];
+            }
+
+            addBook(newBook) {
+                this.books.push(newBook);
+                console.log(`Added the '${newBook.title}' to the '${this.title}' library.`);
+            }
+
+            findBookByISBN(ISBN) {
+                return this.books.find((book) => book.ISBN === ISBN);
+            }
+
+            listAvailableBooks() {
+                let availableBooks = [];
+                for(let book of this.books) {
+                    if(book.isBorrow == false)
+                        availableBooks.push(book.title);
+                }
+                return availableBooks;
+            }
+
+            listBorrowedBooks() {
+                let availableBooks = [];
+                for(let book of this.books) {
+                    if(book.isBorrow == true)
+                        availableBooks.push(book.title);
+                }
+                return availableBooks;
+            }
+        }
+
+        const book1 = new book("Good times", "geoegre", "123");
+        const book2 = new book("Happy Days", "shekhar", "43456");
+        const book3 = new book("Life is Beautiful", "kammula", "347");
+
+        const aceLibrary = new library("Ace Library");
+        aceLibrary.addBook(book1);
+        aceLibrary.addBook(book2);
+        aceLibrary.addBook(book3);
+        book1.borrow();
+        book2.borrow();
+        console.log(aceLibrary.listAvailableBooks());
+        console.log(aceLibrary.listBorrowedBooks());
+        const book4 = new book("Happy Days1", "shekhar1", "434569");
+        const book5 = new book("Life is Beautiful1", "kammula1", "34776");
+        aceLibrary.addBook(book4);
+        aceLibrary.addBook(book5);
+        book5.returnBook();
+        console.log(aceLibrary.listAvailableBooks());
+        console.log(aceLibrary.listBorrowedBooks());
+        console.log(aceLibrary.findBookByISBN("43456"));
+        console.log(aceLibrary.findBookByISBN("347"));
+        book2.returnBook();
+        console.log(aceLibrary.listAvailableBooks());
+        console.log(aceLibrary.listBorrowedBooks());
+    </script>
+</body>
+</html>
