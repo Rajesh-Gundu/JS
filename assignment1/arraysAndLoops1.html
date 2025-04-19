@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops 1</title>
+</head>
+<body>
+    <script>
+        function processTransactions(transactions) {
+            let balance = 0;
+            let totalDeposit = 0;
+            let totalWithdrawal = 0;
+            for(let trans of transactions) {
+                if(trans.deposit) {
+                    totalDeposit += trans.deposit;
+                    balance += trans.deposit;
+                }
+                else {
+                    totalWithdrawal += trans.withdraw;
+                    balance -= trans.withdraw;
+                }
+            }
+            return {
+                finalBalance : balance,
+                totalDeposits : totalDeposit,
+                totalWithdrawals : totalWithdrawal
+            }
+        }
+
+        console.log(processTransactions([
+            {
+                deposit : 1000
+            },
+            {
+                deposit : 500,
+            },
+            {
+                withdraw : 1500,
+            },
+            {
+                deposit : 10,
+            }
+        ]))
+    </script>
+</body>
+</html>
