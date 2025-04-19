@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3</title>
+</head>
+<body>
+    <P>Question-3</P>
+    <ul>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+        <li>Item-5</li>
+    </ul>
+    <script>
+        let items = document.getElementsByTagName("li");
+        for(let i=0;i<items.length;i++){
+            console.log(items[i].innerText);
+            if(i%2)
+                items[i].classList.add("highlight");
+        }
+        console.log(items.length);
+        let highlightele = document.getElementsByClassName("highlight");
+        for(let i=0;i<highlightele.length;i++)
+            console.log(highlightele[i].innerText);
+    </script>
+</body>
+</html>
