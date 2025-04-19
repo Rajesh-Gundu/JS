@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        cursor: pointer;
+      }
+      .item:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My List</h1>
+      <ul class="myList"></ul>
+      <button class="addButton">Add Item</button>
+    </div>
+
+    <script>
+      const element = document.querySelector(".myList");
+      const buttonElement = document.querySelector(".addButton");
+      buttonElement.addEventListener("click", () => {
+        const newItem = document.createElement("li");
+        newItem.setAttribute("class","item");
+        newItem.innerHTML = "New Item";
+        element.append(newItem);
+        newItem.addEventListener("click", () => {
+          element.removeChild(newItem);
+        });
+      });
+    </script>
+  </body>
+</html>
