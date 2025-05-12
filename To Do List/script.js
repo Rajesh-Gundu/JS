@@ -6,6 +6,18 @@ const toDoList = document.querySelector('#todo-list');
 addButton.addEventListener('click', () => {
     let task = input.value;
     let time = date.value;
+    if(!task && !time) {
+        alert('Enter Task and Date');
+        return;
+    }
+    else if(!task) {
+        alert('Enter Task');
+        return;
+    }
+    else if(!time) {
+        alert('Enter Date');
+        return;
+    }
     let para1 = document.createElement('p');
     para1.innerText = task;
     let para2 = document.createElement('p');

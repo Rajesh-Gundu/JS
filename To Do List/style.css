@@ -3,4 +3,23 @@
     grid-template-columns: 200px 150px 100px;
     column-gap: 10px;
     row-gap: 10px;
+    font-size: 20px;
+    align-items: center;
+}
+
+input {
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+button {
+    color: white;
+    background-color: green;
+    font-size: 16px;
+    border: none;
+    height: 35px;
+}
+
+.delete-button {
+    background-color: rgb(216, 3, 3);
 }
